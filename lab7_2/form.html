@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form>
+<table>
+    <tr>
+        <td colspan="1">Фамилия:</td>
+        <td rowspan="1">
+            <label>
+                <input name="last-name"/>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="1"> Пароль:</td>
+        <td rowspan="1">
+            <label>
+                <input name="pass"
+                       type="password"
+                       maxlength="10"
+                       size="10"/>
+            </label>
+        </td>
+    </tr>
+</table>
+<div>Выберите вопрос:</div>
+<div>
+    <input type="radio"
+           id="question1"
+           name="question"
+           checked>
+    <label for="question1">1</label>
+
+    <input type="radio"
+           id="contactChoice2"
+           name="question">
+    <label for="contactChoice2">2</label>
+
+    <input type="radio"
+           id="question3"
+           name="question">
+    <label for="question3">3</label>
+
+    <input type="radio"
+           id="question4"
+           name="question">
+    <label for="question4">4</label>
+</div>
+<div>Введите ответ на вопрос:</div>
+<div align="middle">
+<textarea cols="40"
+          rows="4"
+          placeholder="???"></textarea>
+    <p><input type="Reset" value="Очистить форму">
+        <input type="Submit" value="Отправить форму"></p>
+</div>
+</form>
+</body>
+</html>
