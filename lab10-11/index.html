@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <title>Test title</title>
+    <meta http-equiv="Content-Language" content="uk"/>
+    <meta name="description" content="description"/>
+    <meta name="keywords" content="keywords"/>
+    <meta name="author" content="author"/>
+    <link type="text/css" media="all" rel="stylesheet" href="css/main.css"/>
+    <script src="scripts.js">
+    </script>
+</head>
+<body>
+<div id="container">
+    <h1>Validation form</h1>
+    
+    <form action="">
+        <table>
+            <tr id="integer_input_block">
+                <td colspan="1">Integer:</td>
+                <td rowspan="1">
+                    <label>
+                        <input id="integer_input"
+                               name="integer"/>
+                    </label>
+                </td>
+            </tr>
+            <tr id="float_input_block">
+                <td rowspan="1">Float:</td>
+                <td rowspan="1">
+                    <label>
+                        <input id="float_input"
+                               name="float"/>
+                    </label>
+                </td>
+            </tr>
+            <tr id="date_input_block">
+                <td rowspan="1">Date in format DD.MM.YYYY:</td>
+                <td rowspan="1">
+                    <label>
+                        <input id="date_input"
+                               name="date"/>
+                    </label>
+                </td>
+            </tr>
+            <tr id="password_input_block">
+                <td rowspan="1">
+                    <sup class="required">*</sup>
+                    Password:</td>
+                <td rowspan="1">
+                    <label>
+                        <input id="password"
+                               type="password"/>
+                    </label>
+                </td>
+            </tr>
+            <tr id="password_confirmation_input_block">
+                <td rowspan="1">
+                    <sup class="required">*</sup>
+                    Repeat Password:</td>
+                <td rowspan="1">
+                    <label>
+                        <input id="repeat_password"
+                               type="password"/>
+                    </label>
+                </td>
+            </tr>
+        </table>
+        <input type="button" id="check_button" onclick="makeCheck()" value="Check"/>
+    </form>
+</div>
+</body>
+</html>
