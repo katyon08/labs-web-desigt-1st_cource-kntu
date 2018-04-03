@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <title>Test title</title>
+    <meta http-equiv="Content-Language" content="uk"/>
+    <meta name="description" content="description"/>
+    <meta name="keywords" content="keywords"/>
+    <meta name="author" content="author"/>
+    <link type="text/css" media="all" rel="stylesheet" href="css/main.css"/>
+    <script type="text/javascript" src="scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                    type: "GET",
+                    url: "http://192.168.176.234:8000/data.xml",
+                    dataType: "xml"
+                },
+
+                function (xml) {
+                    window.alert("Success");
+                    $(xml).find('man').each(function () {
+                        document.writeln($(this).attr("id"));
+                        $(this).find('name').each(function () {
+                            document.writeln($(this).text());
+                            window.alert($(this).text());
+                        })
+                    })
+                }
+            )
+        })
+    </script>
+</head>
+<body>
+<div id="container">
+    <h1>Registration form</h1>
+    
+    <form action="">
+        <table>
+            <tr id="name_input_block">
+                <td colspan="1">Name:</td>
+                <td rowspan="1">
+                    <label>
+                        <input id="name"
+                               name="name"/>
+                    </label>
+                </td>
+            </tr>
+            <tr id="country_input_block">
+                <td rowspan="1">Country:</td>
+                <td rowspan="1">
+                    <label>
+                        <input id="country"
+                               name="country"/>
+                    </label>
+                </td>
+            </tr>
+            <tr id="city_input_block">
+                <td rowspan="1">City:</td>
+                <td rowspan="1">
+                    <label>
+                        <input id="city"
+                               name="city"/>
+                    </label>
+                </td>
+            </tr>
+            <tr id="password_input_block">
+                <td rowspan="1">
+                    <sup class="required">*</sup>
+                    <div class="tooltip">
+                        Password:
+                        <span
+                                class="tooltiptext">
+                        <div>Minimum eight characters, at least one uppercase letter, one lowercase letter and one number!</div>
+                    </span>
+                    </div>
+                </td>
+                <td rowspan="1">
+                    <label>
+                        <input id="password"
+                               type="password"/>
+                    </label>
+                </td>
+            </tr>
+            <tr id="password_confirmation_input_block">
+                <td rowspan="1">
+                    <sup class="required">*</sup>
+                    Repeat Password:
+                </td>
+                <td rowspan="1">
+                    <label>
+                        <input id="repeat_password"
+                               type="password"/>
+                    </label>
+                </td>
+            </tr>
+        </table>
+        <input type="button" id="register_button" onclick="makeRegister()" value="Register"/>
+    </form>
+</div>
+</body>
+</html>
